@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import NextAuth from "next-auth";
-import CredentialaProvider from "next-auth/providers/credentials";
+import CredentialProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import prisma from "@/libs/primadb";
@@ -8,7 +8,7 @@ import prisma from "@/libs/primadb";
 export default NextAuth({
   adapter: PrismaAdapter(prisma),
   providers: [
-    CredentialaProvider({
+    CredentialProvider({
       name: "credentials",
       credentials: {
         email: { label: "email", type: "text" },

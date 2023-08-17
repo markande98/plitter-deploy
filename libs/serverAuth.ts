@@ -5,7 +5,7 @@ import prisma from "@/libs/primadb";
 
 const serverAuth = async (req: NextApiRequest) => {
   const session = await getSession({ req });
-
+  
   if (!session?.user?.email) {
     throw new Error("Not Signed in");
   }
